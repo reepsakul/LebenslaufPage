@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+        <meta charset="utf-8">
+        <title>Lebenslauf</title>
+    </head>
+    <body>
+        <div class="verticalline"></div>
+        <h1 id="heading1">Lebenslauf</h1>
+        <div>
+            <img src="images/bewerbungsfoto.jpg" class="portrait">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+        </div>
+        <script>
+            document.querySelector('body')
+            .addEventListener('mousemove', eyeball);
+            function eyeball(){
+                var eye = document.querySelectorAll('.eye');
+                eye.forEach(function(eye){
+                    let x = (eye.getBoundingClientRect()
+                    .left) + (eye.clientWidth / 2);
+                    let y = (eye.getBoundingClientRect()
+                    .top) + (eye.clientHeight / 2);
+                    let radian = Math.atan2(event.pageX -
+                    x, event.pageY - y)
+                    let rot = (radian * (180 / Math.PI) *
+                    -1) + 100;
+                    eye.style.transform = "rotate("+ rot +"deg)";
+                })
+            }
+        </script>
+        <table class="fixedtable">
+            <tr>
+                <th id="topic">
+                    Persönliche Daten:
+                </th>
+                <th id="data"></th>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Name:
+                </td>
+                <td id="data">
+                    Lukas Maximilian Peer
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Adresse:
+                </td>
+                <td id="data">
+                    Johann Haßlwanter-Weg 10, 6424 SILZ
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Geburtsdaten:
+                </td>
+                <td id="data">
+                    <p>27/07/2003, Innsbruck, nächster Geburtstag in <i><strong><span id="timer"></span></strong></i></p>
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Staatsbürgerschaft:
+                </td>
+                <td id="data">
+                    Österreich
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Telefon:
+                </td>
+                <td id="data">
+                    +43 664 458 34 34
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    E-Mail:
+                </td>
+                <td id="data">
+                    lukaspeer93@gmail.com
+                </td>
+            </tr>
+            <tr>
+                <th id="topic">
+                    Praktika/Kurse:
+                </th>
+                <th id="data"></th>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Derzeit:
+                </td>
+                <td id="data">
+                    Allgemeine Lehrgänge §30b BAG, die Berater GmbH, Imst <br/>
+                    Kursinhalte: Bewerbungstraining, Soft Skills, Kommunikationstraining
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    11/2021 (1Woche)
+                </td>
+                <td id="data">
+                    Praktikum als Automatisierungstechniker, Fiegl+Spielberger GmbH, Zirl <br/>
+                    Tätigkeiten: Legen von Kabeln, Unterstützung in der Montage von Lampen
+                </td>
+            </tr>
+            <tr>
+                <th id="topic">
+                    Schulbildung:
+                </th>
+                <th id="data"></th>
+            </tr>
+            <tr>
+                <td id="topic">
+                    09/2017-09/2021
+                </td>
+                <td id="data">
+                    Bundes-Oberstufen-Realgymnasium Telfs
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    09/2013-07/2017
+                </td>
+                <td id="data">
+                    Bundes-Realgymnasium Telfs
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    09/2009-07/2013
+                </td>
+                <td id="data">
+                    Volksschule Silz
+                </td>
+            </tr>
+            <tr>
+                <th id="topic">
+                    Kompetenzen/Interessen:
+                </th>
+                <th id="data"></th>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Kompetenzen:
+                </td>
+                <td id="data">
+                    Lernbereitschaft, Kritikfähigkeit, Kreativität in Lösungsansätzen, Motivation, <br/> starkes Interesse in die Thematik, mathematisches Denken
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Sprachen:
+                </td>
+                <td id="data">
+                    Deutsch (Muttersprache), Englisch (Oberschulniveau), Latein (Grundkenntnisse)
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    EDV:
+                </td>
+                <td id="data">
+                    MS-Office (Anwenderkenntnisse), Anaconda Python (im Informatik-Unterricht),<br/> grundlegende C++, C#, HTML, CSS und JavaScript Kenntnisse
+                </td>
+            </tr>
+            <tr>
+                <td id="topic">
+                    Hobbys:
+                </td>
+                <td id="data">
+                    Schreiben simpelster Codes, autodidakt Klavier üben, Kochen
+                </td>
+            </tr>
+        </table>
+        <script>
+            var countDownDate = new Date("Jul 27, 2022 00:00:00").getTime();
+            var x = setInterval(function() {
+              var now = new Date().getTime();
+              var distance = countDownDate - now;
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              document.getElementById("timer").innerHTML = days + " Tage " + hours + " Stunden "
+              + minutes + " minuten " + seconds + " sekunden ";
+            
+              // If the count down is finished, write some text
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+              }
+            }, 1000);
+            </script>
+        <p class="date"><time dateitme="2022-03-01">01.03.2022</time></p>
+    </body>
+
+</html>
